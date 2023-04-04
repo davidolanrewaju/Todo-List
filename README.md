@@ -53,7 +53,7 @@ After you're finished please remove all the comments and instructions!
 
 # 📖 AwesomeBooks <a name="about-project"></a>
 
-**[Todo-List App]** is a project that helps showcase the use of **Webpack**, a module bundler, and also the use of Javascript to add and remove contents dynamically.
+**Todo-List App** is a project that helps showcase the use of **Webpack**, a module bundler, and also the use of Javascript to add and remove contents dynamically.
 
 ## 🛠 Built With <a name="built-with"></a>
 
