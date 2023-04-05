@@ -6,9 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo-List</title>
     <link rel="stylesheet" href="/src/style.css">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 <body>
-    <h2>To-do List</h2>
+    <section id="todo-section">
+        <div class="todo-header">
+            <h1>To-do List</h1>
+            <span class="material-icons">&#xe863;</span>
+        </div>
+        <div class="add-task">
+            <form id="update-list" method="post">
+                <input id="add-to-list" type="text" placeholder="Add your list...">
+                <button class="add-btn">
+                    <span class="material-icons">&#xe5d9;</span>
+                </button>
+            </form>
+        </div>
+        <div class="display-tasks">
+            <div class="display-task">
+                <input type="checkbox">
+                <p>Wash clothes</p>
+                <span class="material-icons">&#xe5d4;</span>
+            </div>
+            <div class="display-task">
+                <input type="checkbox">
+                <p>Buy Groceries</p>
+                <span class="material-icons">&#xe5d4;</span>
+            </div>
+        </div>
+        <div class="clear-tasks">
+            <p>Clear all completed</p>
+        </div>
+    </section>
 </body>
 </html>
