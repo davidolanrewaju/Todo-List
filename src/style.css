@@ -8,8 +8,9 @@ body {
   background-color: #c7c0c0;
 }
 
-#todo-section{
+#todo-section {
   background-color: rgb(255, 255, 255);
+  border-radius: 20px;
 }
 
 .todo-header {
@@ -55,14 +56,17 @@ body {
   align-items: center;
 }
 
-.checkbox {
-  cursor: default;
+input.checkbox {
+  cursor: pointer;
+  height: 16px;
 }
 
 .clear-tasks {
   padding: 20px;
   text-align: center;
   background-color: #ebebeb;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .clear-tasks p {
@@ -77,4 +81,3 @@ body {
   color: #b8b8b8;
   cursor: pointer;
 }
-

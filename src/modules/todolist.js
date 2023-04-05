@@ -23,7 +23,7 @@ function renderList() {
     const displayTask = document.createElement('div');
     displayTask.classList.add('display-task');
     displayTask.innerHTML += `
-                <input id = 'checkbox' data-index = '${i}' type="checkbox" ${todoList[i].completed ? 'checked' : ''}>
+                <input class = 'checkbox' data-index = '${i}' type="checkbox" ${todoList[i].completed ? 'checked' : ''}>
                 <p>${todoList[i].description}</p>
                 <span class="material-icons">&#xe5d4;</span>
             </div>
