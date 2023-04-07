@@ -22,7 +22,7 @@ function addTask(event) {
   const taskData = {
     description: '',
     completed: false,
-    index: todoList.length,
+    index: todoList.length + 1,
   };
   const getInput = addToList.value;
   taskData.description = getInput;
