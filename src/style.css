@@ -14,7 +14,7 @@ body {
 }
 
 .todo-header {
-  padding: 5px 30px;
+  padding: 5px 35px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -49,10 +49,24 @@ body {
 }
 
 .display-task {
-  padding: 20px auto;
+  padding: 10px 10px 10px 25px;
   border-bottom: 1px solid #c7c0c0;
-  display: grid;
-  grid-template-columns: 10% 82% 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.check-task {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.task-icons {
+  display: flex;
+  flex-direction: row;
   align-items: center;
 }
 
@@ -80,4 +94,20 @@ input.checkbox {
 .material-icons {
   color: #b8b8b8;
   cursor: pointer;
+  font-size: 20px;
+}
+
+.edit {
+  position: relative;
+  right: 25px;
+}
+
+.delete {
+  position: relative;
+  right: 25px;
+}
+
+.edit-mode {
+  border: none;
+  outline: none;
 }
