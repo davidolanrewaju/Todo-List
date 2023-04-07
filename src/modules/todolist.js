@@ -1,20 +1,9 @@
+/* eslint-disable import/no-cycle */
+import { saveData, loadData, todoList } from './add-task.js';
+import { deleteTask } from './delete-task.js';
+
 const displayTasks = document.querySelector('.display-tasks');
 const refreshBtn = document.querySelector('.refresh');
-const addToList = document.querySelector('#add-to-list');
-const addBtn = document.querySelector('.add-btn');
-
-let todoList = [];
-
-function saveData() {
-  localStorage.setItem('todolist', JSON.stringify(todoList));
-}
-
-function loadData() {
-  const savedData = JSON.parse(localStorage.getItem('todolist'));
-  if (savedData) {
-    todoList = savedData;
-  }
-}
 
 // Add a clearList function to remove all child nodes from the displayTasks element
 function clearList() {
@@ -36,7 +25,7 @@ function renderList() {
                   <p data-index = '${i}'>${todoList[i].description}</p>
                 </div>
                 <div class="task-icons">
-                  <span class="material-icons edit" data-index = '${i}'>&#xe5d4;</span>
+                  <span class="material-icons edit" data-index = '${i}'>&#xe3c9;</span>
                   <span class="material-icons delete" data-index = '${i}'>&#xe872</span>
                 </div>
             </div>
@@ -54,6 +43,7 @@ function renderList() {
     const editBtn = document.querySelector(`.edit[data-index="${i}"]`);
     const deleteBtn = document.querySelector(`.delete[data-index="${i}"]`);
     const descriptionElem = document.querySelector(`p[data-index="${i}"]`);
+
     // eslint-disable-next-line no-loop-func
     editBtn.addEventListener('click', (event) => {
       const { index } = event.target.dataset;
@@ -62,7 +52,6 @@ function renderList() {
       descriptionElem.classList.add('edit-mode');
       displayTask.style.backgroundColor = '#fff9c1';
       descriptionElem.focus();
-      deleteBtn.style.display = 'block';
       editBtn.style.display = 'none';
       saveData();
     });
@@ -79,36 +68,12 @@ function renderList() {
       saveData();
     });
 
-    // eslint-disable-next-line no-loop-func
-    deleteBtn.addEventListener('click', (event) => {
-      const { index } = event.target.dataset;
-      todoList.splice(index, 1);
-      saveData();
-      renderList();
-    });
+    deleteBtn.addEventListener('click', deleteTask);
   }
 }
 
-function addTask(event) {
-  event.preventDefault();
-  const taskData = {
-    description: '',
-    completed: false,
-    index: todoList.length,
-  };
-  const getInput = addToList.value;
-  taskData.description = getInput;
-  todoList.push(taskData);
-  saveData();
-  renderList();
-
-  addToList.value = ''; // reset input field
-  // eslint-disable-next-line no-restricted-globals
-  location.reload(); // refresh page
-}
-
 loadData();
-addBtn.addEventListener('click', addTask);
+
 refreshBtn.addEventListener('click', () => {
   // eslint-disable-next-line no-restricted-globals
   location.reload();
