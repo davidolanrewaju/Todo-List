@@ -1,4 +1,4 @@
-// eslint-disable-next-line no-loop-func
+/* eslint-disable import/no-cycle */
 import { todoList, saveData } from './add-task.js';
 import { renderList } from './todolist.js';
 
