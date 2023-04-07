@@ -6,6 +6,12 @@ function deleteTask(event) {
   const { index } = event.target.dataset;
   todoList.splice(index, 1);
   saveData();
+
+  // update the index value of the remaining tasks
+  for (let i = index; i < todoList.length; i += 1) {
+    todoList[i].index = i;
+  }
+
   renderList();
 }
 
