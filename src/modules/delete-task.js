@@ -4,18 +4,12 @@ import { renderList } from './todolist.js';
 
 function deleteTask(event) {
   const { index } = event.target.dataset;
-  const itemIndex = todoList.findIndex(
-    (item) => item.index === parseInt(index, 10),
-  );
-  if (itemIndex === -1) {
-    return; // no item found, exit the function
-  }
-  todoList.splice(itemIndex, 1);
+  todoList.splice(index, 1);
 
-  // update the index value of the remaining tasks
-  for (let i = itemIndex; i < todoList.length; i += 1) {
-    todoList[i].index = i + 1;
-  }
+  // update the index property of the remaining tasks
+  todoList.forEach((task, i) => {
+    task.index = i + 1;
+  });
 
   saveData();
   renderList();
