@@ -83,7 +83,7 @@ input.checkbox {
   border-bottom-right-radius: 20px;
 }
 
-.clear-tasks p {
+.clear-btn {
   margin: 0;
   color: #a5a5a5;
   font-size: 18px;
@@ -95,6 +95,13 @@ input.checkbox {
   color: #b8b8b8;
   cursor: pointer;
   font-size: 20px;
+}
+
+.material-icons:hover {
+  background-color: #777;
+  padding: 5px;
+  border-radius: 50px;
+  color: white;
 }
 
 .edit {
@@ -110,4 +117,11 @@ input.checkbox {
 .edit-mode {
   border: none;
   outline: none;
+}
+
+.clear-btn:hover {
+  background-color: #777;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
 }
