@@ -1,9 +1,11 @@
 /* eslint-disable import/no-cycle */
 import { saveData, loadData, todoList } from './add-task.js';
 import { deleteTask } from './delete-task.js';
+import { checkTask, clearCompleted } from './update-list.js';
 
 const displayTasks = document.querySelector('.display-tasks');
 const refreshBtn = document.querySelector('.refresh');
+const clearBtn = document.querySelector('.clear-btn');
 
 // Add a clearList function to remove all child nodes from the displayTasks element
 function clearList() {
@@ -34,11 +36,7 @@ function renderList() {
 
     const checkbox = document.querySelector(`input[data-index="${i}"]`);
     // eslint-disable-next-line no-loop-func
-    checkbox.addEventListener('change', (event) => {
-      const { index } = event.target.dataset;
-      todoList[index].completed = event.target.checked;
-      saveData();
-    });
+    checkbox.addEventListener('change', checkTask);
 
     const editBtn = document.querySelector(`.edit[data-index="${i}"]`);
     const deleteBtn = document.querySelector(`.delete[data-index="${i}"]`);
@@ -79,6 +77,7 @@ refreshBtn.addEventListener('click', () => {
   location.reload();
   loadData();
 });
+clearBtn.addEventListener('click', clearCompleted);
 
 // eslint-disable-next-line import/prefer-default-export
 export { renderList };
