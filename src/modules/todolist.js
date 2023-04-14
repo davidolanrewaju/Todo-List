@@ -72,12 +72,17 @@ function renderList() {
 
 loadData();
 
-refreshBtn.addEventListener('click', () => {
-  // eslint-disable-next-line no-restricted-globals
-  location.reload();
-  loadData();
+document.addEventListener('DOMContentLoaded', () => {
+  clearList();
+  renderList();
+  refreshBtn.addEventListener('click', () => {
+    // eslint-disable-next-line no-restricted-globals
+    location.reload();
+    loadData();
+  });
+
+  clearBtn.addEventListener('click', clearCompleted);
 });
-clearBtn.addEventListener('click', clearCompleted);
 
 // eslint-disable-next-line import/prefer-default-export
 export { renderList };

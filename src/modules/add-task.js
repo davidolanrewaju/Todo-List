@@ -1,8 +1,6 @@
 // eslint-disable-next-line import/no-cycle
 import { renderList } from './todolist.js';
 
-const addToList = document.querySelector('#add-to-list');
-
 // eslint-disable-next-line import/no-mutable-exports
 let todoList = [];
 
@@ -24,13 +22,13 @@ function addTask(event) {
     completed: false,
     index: todoList.length + 1,
   };
-  const getInput = addToList.value;
+  const getInput = ((document.getElementById('add-to-list') || {}).value) || '';
   taskData.description = getInput;
   todoList.push(taskData);
   saveData();
   renderList();
 
-  addToList.value = ''; // reset input field
+  document.getElementById('add-to-list').value = ''; // reset input field
   // eslint-disable-next-line no-restricted-globals
   location.reload(); // refresh page
 }
