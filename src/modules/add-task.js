@@ -17,8 +17,7 @@ function loadData() {
   }
 }
 
-function addTask(event) {
-  event.preventDefault();
+function addTask() {
   const taskData = {
     description: '',
     completed: false,
@@ -31,11 +30,12 @@ function addTask(event) {
   renderList();
 
   addToList.value = ''; // reset input field
+
   // eslint-disable-next-line no-restricted-globals
   location.reload(); // refresh page
 }
 
 // eslint-disable-next-line import/prefer-default-export
 export {
-  addTask, loadData, saveData, todoList,
+  addTask, loadData, saveData, todoList, addToList,
 };

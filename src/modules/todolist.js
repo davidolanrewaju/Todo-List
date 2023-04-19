@@ -4,7 +4,6 @@ import { deleteTask } from './delete-task.js';
 import { checkTask, clearCompleted } from './update-list.js';
 
 const displayTasks = document.querySelector('.display-tasks');
-const refreshBtn = document.querySelector('.refresh');
 const clearBtn = document.querySelector('.clear-btn');
 
 // Add a clearList function to remove all child nodes from the displayTasks element
@@ -72,12 +71,15 @@ function renderList() {
 
 loadData();
 
-refreshBtn.addEventListener('click', () => {
-  // eslint-disable-next-line no-restricted-globals
-  location.reload();
-  loadData();
+document.addEventListener('DOMContentLoaded', () => {
+  const refreshBtn = document.querySelector('.refresh');
+  refreshBtn.addEventListener('click', () => {
+    // eslint-disable-next-line no-restricted-globals
+    location.reload();
+    loadData();
+  });
+  clearBtn.addEventListener('click', clearCompleted);
 });
-clearBtn.addEventListener('click', clearCompleted);
 
 // eslint-disable-next-line import/prefer-default-export
 export { renderList };
