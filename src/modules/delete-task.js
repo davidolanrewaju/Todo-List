@@ -13,6 +13,8 @@ function deleteTask(event) {
 
   saveData();
   renderList();
+  // eslint-disable-next-line no-restricted-globals
+  location.reload();
 }
 
 // eslint-disable-next-line import/prefer-default-export
