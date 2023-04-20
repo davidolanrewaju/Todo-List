@@ -15,4 +15,14 @@ describe('addTask', () => {
       expect(todoList[0].description).toBe('New task');
     });
   });
+
+  // Test case 2
+  test('should reset input field after adding task', () => {
+    document.addEventListener('DOMContentLoaded', () => {
+      const addToList = document.querySelector('#add-to-list');
+      addToList.value = 'New task';
+      addTask();
+      expect(addToList.value).toBe('');
+    });
+  });
 });
