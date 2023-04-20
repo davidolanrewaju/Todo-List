@@ -37,5 +37,5 @@ function addTask() {
 
 // eslint-disable-next-line import/prefer-default-export
 export {
-  addTask, loadData, saveData, todoList, addToList,
+  addTask, loadData, saveData, todoList,
 };

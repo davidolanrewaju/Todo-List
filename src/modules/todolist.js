@@ -6,16 +6,7 @@ import { checkTask, clearCompleted } from './update-list.js';
 const displayTasks = document.querySelector('.display-tasks');
 const clearBtn = document.querySelector('.clear-btn');
 
-// Add a clearList function to remove all child nodes from the displayTasks element
-function clearList() {
-  while (displayTasks.firstChild) {
-    displayTasks.removeChild(displayTasks.firstChild);
-  }
-}
-
 function renderList() {
-  clearList();
-
   todoList.sort((a, b) => a.index - b.index); // sort array according to index
   for (let i = 0; i < todoList.length; i += 1) {
     const displayTask = document.createElement('div');
