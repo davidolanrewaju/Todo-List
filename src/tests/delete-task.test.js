@@ -22,12 +22,12 @@ describe('deleteTask function', () => {
     ]);
   });
 
-//   test('should update the index property of the remaining tasks', () => {
-//     // Mock the event object
-//     const event = { target: { dataset: { index: 0 } } };
+  //   test('should update the index property of the remaining tasks', () => {
+  //     // Mock the event object
+  //     const event = { target: { dataset: { index: 0 } } };
 
-//     // Call the deleteTask function
-//     deleteTask(event);
+  //     // Call the deleteTask function
+  //     deleteTask(event);
 
 //     // Check if the index property of the remaining tasks has been updated
 //     expect(todoList).toEqual([
