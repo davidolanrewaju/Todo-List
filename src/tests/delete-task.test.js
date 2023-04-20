@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import { deleteTask } from '../modules/delete-task.js';
 
 // A mock todoList array to use in tests
