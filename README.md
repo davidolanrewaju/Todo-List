@@ -82,7 +82,7 @@ After you're finished please remove all the comments and instructions!
 
 <!-- LIVE DEMO -->
 ### 🚀 Live Demo <a name="live-demo"></a>
-- [Live Demo Link](https://dave-prog.github.io/Todo-List/dist/)
+- [Live Demo Link](https://davidolanrewaju.github.io/Todo-List/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
