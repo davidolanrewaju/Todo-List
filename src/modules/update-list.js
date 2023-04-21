@@ -4,8 +4,10 @@ import { renderList } from './todolist.js';
 
 function checkTask(event) {
   const { index } = event.target.dataset;
-  todoList[index].completed = event.target.checked;
-  saveData();
+  if (todoList[index]) {
+    todoList[index].completed = event.target.checked;
+    saveData();
+  }
 }
 
 function clearCompleted() {
